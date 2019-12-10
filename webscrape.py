@@ -3,11 +3,7 @@ from bs4 import BeautifulSoup
 import json
 
 cards = []
-
-# try:
 response = requests.get('https://www.eventshigh.com/city/hyderabad').text
-# except requests.exceptions.ConnectionError:
-# print("something went wrong")
 
 soup = BeautifulSoup(response, 'html.parser')
 events = soup.find_all(class_='d-inline-block event-card-wrp valign-top ga-card-track')
